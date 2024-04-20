@@ -1,0 +1,613 @@
+@import url(reset.css);
+/* Fragment Mono Font */
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap');
+/* Dancing Script font for h1 */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fragment+Mono:ital@0;1&display=swap');
+
+:root {
+    /** include the system-ui font family here **/
+    font-family: "Fragment Mono", monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-size: 0.9em;
+
+    /* defining color properties */
+    --light-one: #EFEEEC;
+    --light-two: #e0cdcd;
+    --light-three: #CDD6E0;
+
+    --dark-one: #3d405b;
+    --dark-two: #81B29A;
+    --dark-three: #e07a5f;
+    --dark-four: #A3683E;
+}
+
+/* for all */
+body {
+
+    /* make the body fill the viewport at minimum */
+    min-height: 100vh;
+    color: var(--dark-one);
+    background-color: var(--light-one);
+
+    /* Make body grid container */
+    /* display: grid; */
+
+    /* defined the rows and columns for our layout grid  */
+    grid-template-columns: 1fr 15em;
+    /*all the space, fixed*/
+    grid-template-rows: 5em 1fr auto;
+    /*fixed,fixed, all the space, based on content */
+
+    /** define the necessary grid template areas for our layout **/
+    grid-template-areas:
+        "nav    nav"
+        "main   main"
+        "footer footer";
+}
+
+/* First heading property & other text */
+h1 {
+    font-size: 2em;
+    font-weight: 800;
+    margin: 1em;
+}
+
+#intro h1 {
+    font-family: "Dancing Script", cursive, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 4em;
+    margin: 0.3em;
+
+}
+
+h1,
+h2,
+p,
+table {
+    align-self: center;
+}
+
+main p:not(#resume p) {
+    margin: 1em 2em 1.5em 2em;
+}
+
+
+/* Navigation styling starts */
+nav {
+    grid-area: nav;
+    background-color: var(--light-two);
+
+    display: flex;
+    align-items: center;
+    border-bottom: var(--dark-one) 0.05em solid;
+    position: fixed;
+    padding: 0.9em 0em;
+    width: 100vw;
+    z-index: 1;
+}
+
+nav ul {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1em;
+}
+
+nav li {
+    margin: 1em 0.8em;
+    padding-left: 0.3em;
+    padding-top: 0.3em;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-one);
+}
+
+nav a:hover {
+    transform: translateY(-1em);
+    color: var(--light-one);
+}
+
+.logo {
+    display: flex;
+    width: 100vw;
+}
+
+.logo p {
+    font-family: "Dancing Script", cursive, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+}
+
+.fa-palette {
+    margin: 0.2em;
+    font-size: 2em;
+}
+
+/* Navigation styling ends */
+
+main {
+    grid-area: main;
+    background-color: var(--light-one);
+}
+
+section {
+    padding: 1em 0em;
+}
+
+img {
+    margin: 1em;
+}
+
+/* First Section styling */
+#first,
+#second,
+#third {
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+
+#first,
+#second {
+    text-align: center;
+}
+
+#first {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../imgs/cancun_background_width.jpg);
+    background-size: cover;
+
+    color: var(--light-two);
+    padding: 10em 0em;
+
+}
+
+#first div {
+    padding-left: 2em;
+    grid-row: 2;
+    display: grid;
+}
+
+#first h1 {
+    grid-row: 1;
+}
+
+#first p {
+    grid-row: 2;
+}
+
+#first a:first-of-type {
+    grid-row: 3;
+}
+
+#first a:last-of-type {
+    grid-row: 4;
+}
+
+#first a {
+    padding: 1em 3em;
+    text-decoration: none;
+    background-color: var(--light-two);
+    color: var(--dark-one);
+    border-radius: 2em;
+    padding: 1em 3em;
+    font-size: 1.3em;
+    animation: bubble 0.4s ease-out;
+    margin: 3em 1em 1em 1em;
+}
+
+
+@keyframes bubble {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (min-width: 60em) {
+
+    #first {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    #first h1 {
+        grid-row: 1;
+        grid-column: 1/span 2;
+    }
+
+    #first p {
+        grid-row: 2;
+        grid-column: 1/span 2;
+    }
+
+    #first a:first-of-type {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    #first a:last-of-type {
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    #first div {
+        padding-left: 2em;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #first picture {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    #second {
+        grid-template-columns: 3fr 4fr;
+    }
+
+    #second div {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #second picture {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #third {
+        grid-template-columns: 5fr 3fr;
+    }
+
+    #third div {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #third picture {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+}
+
+
+#first img,
+#second img,
+#third img {
+    border: var(--light-two) solid 0.5em;
+}
+
+/* Second section */
+
+#second {
+    background-color: var(--light-one);
+}
+
+
+/* Third Section */
+
+#third {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../imgs/background2.jpg);
+    color: var(--light-two);
+}
+
+#third div {
+    background-color: var(--dark-one);
+    border-radius: 2em;
+    color: var(--light-one);
+    margin: 2em;
+}
+
+#third ul {
+    margin: 1em 1em 2em 1em;
+}
+
+#third li {
+    margin: 1em;
+}
+
+
+/* Forth Section - Contact me */
+#contact {
+    display: grid;
+    justify-content: center;
+}
+
+
+table {
+    padding: 1em;
+    border: var(--light-two) solid 0.5em;
+    margin-bottom: 1em;
+}
+
+#resume table {
+    margin-bottom: 3em;
+}
+
+td,
+th {
+    padding: 1em;
+    border: var(--dark-one) 0.01em solid;
+}
+
+th {
+    font-weight: 700;
+}
+
+table a {
+    color: var(--dark-one);
+}
+
+table a:hover {
+    color: var(--dark-two);
+}
+
+table a:visited {
+    color: var(--dark-three);
+}
+
+/* Footer Styles */
+footer {
+    grid-area: footer;
+    display: flex;
+    background-color: var(--light-three);
+    padding: 1em;
+    border-top: var(--dark-one) 0.05em solid;
+    flex-direction: column;
+}
+
+footer p {
+    margin: 0.25em;
+}
+
+/* ANIMATION for first page */
+
+table:hover,
+#first img:hover,
+#second img:hover,
+#third img:hover {
+    transform: translateY(-1em);
+    border: var(--light-three) solid 0.5em;
+    box-shadow: 0 0 2em var(--light-three);
+}
+
+#third div:hover {
+    transform: translateY(-1em);
+    box-shadow: 0 0 2em var(--light-two);
+}
+
+#first a:hover {
+    transform: translateY(-1em);
+    box-shadow: 0 0 2em var(--light-three);
+}
+
+#third div,
+nav a,
+#first a,
+table,
+img {
+    transition: all 0.3s;
+}
+
+/* Animations */
+/* SlideInLeft */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-18.75em);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+.slideInLeft {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Rotate */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: rotate(-1.2em);
+    }
+
+    60% {
+        transform: translateY(-0.5em);
+    }
+}
+
+/* Bouncing animation */
+.bounce {
+    animation: bounce 1s linear;
+}
+
+
+/* CV Resume page */
+
+#intro img:hover {
+    transform: translateY(-1em);
+    border: none;
+}
+
+/* Start of the page */
+#intro {
+    padding-top: 10em;
+    margin: 0em 5em;
+    display: grid;
+
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+@media screen and (min-width: 40em) {
+
+    #intro {
+        gap: 3em;
+    }
+
+    #resume {
+
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "cell1 cell2"
+            "cell3 cell2"
+            "cell4 cell4"
+            "cell5 cell5";
+
+    }
+
+    #intro {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    #intro img {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #intro div {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+
+    #resume .item1 {
+        grid-area: cell1;
+    }
+
+    #resume .item2 {
+        grid-area: cell2;
+
+    }
+
+    #resume .item3 {
+        grid-area: cell3;
+
+    }
+
+    #resume .item4 {
+        grid-area: cell4;
+
+    }
+
+    #resume .item5 {
+        grid-area: cell5;
+    }
+
+
+}
+
+/* Resume side of the page */
+#resume {
+    display: grid;
+    margin: 2em;
+    align-items: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+#resume h1 {
+    margin: 0.5em 0em;
+}
+
+#resume ul {
+    list-style-type: disc;
+    margin-left: 2em;
+    margin: 0.3em 2em;
+}
+
+em {
+    font-size: 0.8em;
+    font-style: italic;
+    padding-bottom: 1em;
+}
+
+#resume .item {
+    padding: 0em 2em 1em 2em;
+    border: var(--dark-one) 0.05em solid;
+    display: grid;
+    justify-items: stretch;
+    align-content: center;
+
+}
+
+.date {
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: center;
+}
+
+.date {
+    color: var(--dark-four);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+b {
+    font-weight: 600;
+}
+
+.date p:first-of-type {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: start;
+}
+
+.date p:nth-of-type(2) {
+    grid-row: 1;
+    grid-column: 2;
+    align-content: end;
+
+}
+
+.items {
+    margin: 0.5em 1em;
+}
+
+.item1 p {
+    margin-top: 0.5em;
+}
+
+.item5 .date {
+    margin: 0.25em 0em;
+}
+
+
+#resume div h1,
+#contact h1 {
+    border-bottom: var(--dark-one) 0.05em solid;
+    font-weight: 500;
+    padding-bottom: 0.3em;
+}
