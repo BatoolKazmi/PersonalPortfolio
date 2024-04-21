@@ -28,6 +28,7 @@ body {
     min-height: 100vh;
     color: var(--dark-one);
     background-color: var(--light-one);
+    font-size: 0.6em;
 
     /* Make body grid container */
     /* display: grid; */
@@ -330,9 +331,10 @@ img {
 
 
 table {
+
     padding: 1em;
     border: var(--light-two) solid 0.5em;
-    margin-bottom: 1em;
+    margin: 1em;
 }
 
 #resume table {
@@ -468,9 +470,22 @@ img {
     align-items: center;
 }
 
+@media screen and (min-width: 20em) {
+    body {
+        font-size: 0.8em
+    }
 
+    h1,
+    h2 {
+        font-size: 1.5em;
+    }
+}
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 45em) {
+
+    body {
+        font-size: 1em;
+    }
 
     #intro {
         gap: 3em;
