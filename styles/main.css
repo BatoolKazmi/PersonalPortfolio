@@ -48,7 +48,7 @@ body {
 
 /* First heading property & other text */
 h1 {
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 800;
     margin: 1em;
 }
@@ -150,6 +150,7 @@ img {
     display: grid;
     align-items: center;
     justify-content: center;
+    align-content: center;
     justify-items: center;
 
 }
@@ -170,7 +171,6 @@ img {
 }
 
 #first div {
-    padding-left: 2em;
     grid-row: 2;
     display: grid;
 }
@@ -462,7 +462,7 @@ img {
 /* Start of the page */
 #intro {
     padding-top: 10em;
-    margin: 0em 5em;
+    margin: 0em 1em;
     display: grid;
 
     justify-items: center;
@@ -472,7 +472,7 @@ img {
 
 @media screen and (min-width: 20em) {
     body {
-        font-size: 0.8em
+        font-size: 0.9em;
     }
 
     h1,
@@ -485,6 +485,11 @@ img {
 
     body {
         font-size: 1em;
+    }
+
+    h1,
+    h2 {
+        font-size: 2em;
     }
 
     #intro {
