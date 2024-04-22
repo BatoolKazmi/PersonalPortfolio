@@ -19,6 +19,12 @@
     --dark-two: #81B29A;
     --dark-three: #e07a5f;
     --dark-four: #A3683E;
+
+    /* Defining properites for hamberger menu */
+    --bar-width: 3.75em;
+    --bar-height: 0.5em;
+    --hamburger-gap: 0.375em;
+    --animation-timing: 650ms ease-in-out;
 }
 
 /* for all */
@@ -630,4 +636,71 @@ b {
     border-bottom: var(--dark-one) 0.05em solid;
     font-weight: 500;
     padding-bottom: 0.3em;
+}
+
+/* Adding Hamburger Menu */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    z-index: 2;
+    align-items: flex-end;
+    width: 90vw;
+    padding-right: 2em;
+}
+
+aside {
+    display: none;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--dark-one);
+    border-radius: 1em;
+    transition: opacity var(--animation-timing), width var(--animation-timing);
+    transform-origin: left center;
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+@media screen and (min-width: 40em) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 40em) {
+    nav>ul {
+        display: none;
+    }
 }
