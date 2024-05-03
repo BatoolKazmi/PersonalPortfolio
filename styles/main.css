@@ -89,11 +89,16 @@ nav {
     z-index: 1;
 }
 
-nav ul {
+nav .menu {
     width: 100vw;
     display: flex;
     justify-content: flex-end;
     margin-right: 1em;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
 }
 
 nav li {
@@ -128,8 +133,26 @@ nav a:hover {
 }
 
 /* Navigation styling ends */
+/* Hamberger menu */
 
-main {
+@media screen and (max-width: 40em) {
+    .menu {
+        width: 90vw;
+        position: fixed;
+        inset: 0;
+        background-color: var(--light-two);
+
+    }
+
+    .menu ul {
+        gap: 1rem;
+        margin: auto;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+*/ main {
     grid-area: main;
     background-color: var(--light-one);
 }
