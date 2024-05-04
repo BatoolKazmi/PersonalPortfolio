@@ -149,7 +149,9 @@ nav a:hover {
         inset: 0;
         background-color: var(--light-two);
         translate: 100vw 0;
-        transition: translate 0.5s ease-in-out;
+        translate: 0;
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
     }
 
     .menu ul {
@@ -167,6 +169,7 @@ nav a:hover {
 /* different here: */
 .open[aria-expanded='true']+.menu {
     translate: 0;
+    opacity: 1;
 }
 
 nav button {
