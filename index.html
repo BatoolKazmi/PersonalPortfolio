@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/main.css">
     <title>About Me</title>
+    <script defer src="./scripts/main.js"></script>
 </head>
 
 <body>
@@ -18,8 +19,17 @@
                 <i class="fa-solid fa-palette"></i>
                 <p>Batool Kazmi</p>
             </div>
-            <div class="menu">
-                <button class="close">
+            <span id="nav-label" hidden>Navigation</span>
+            <button 
+                id="btnOpen"
+                class="topnav open" 
+                aria-expanded="false" 
+                aria-labelledby="nav-label"
+            >
+                <img src="./imgs/Other/hamburger.svg" alt="" width="40" height="24" />
+            </button>
+            <div class="topnav menu" role="dialog" aria-labelledby="nav-label"> 
+                <button class="close" id="btnClose" aria-label="Close">
                     <img src="./imgs/Other/close.svg" alt="" width="40" height="24" /> 
                 </button>
                 <ul>

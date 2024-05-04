@@ -91,7 +91,7 @@ nav {
 
 nav .menu {
     width: 100vw;
-    /* margin-right: 1em; */
+    margin-right: 1em;
 }
 
 @media screen and (min-width: 40em) {
@@ -158,21 +158,41 @@ nav a:hover {
         align-items: center;
         flex-direction: column;
     }
+
+    .close {
+        display: block;
+    }
+}
+
+/* different here: */
+.open[aria-expanded='true']+.menu {
+    translate: 0;
 }
 
 nav button {
     background: none;
     border: none;
     padding: 0;
+}
 
-    display: block;
+@media screen and (width >=40em) {
+
+    nav button,
+    .close {
+        display: none;
+    }
+}
+
+.close {
     margin-inline-start: auto;
     margin-block-end: 8rem;
+    margin-top: 0.8em;
+    margin-right: 0.3em;
     /* add to media? */
     align-self: flex-start;
 }
 
-nav button img {
+nav .close img {
     width: 2.5rem;
 }
 
