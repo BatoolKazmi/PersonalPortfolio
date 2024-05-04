@@ -89,11 +89,23 @@ nav {
     z-index: 1;
 }
 
-nav ul {
+nav .menu {
     width: 100vw;
-    display: flex;
-    justify-content: flex-end;
     margin-right: 1em;
+}
+
+@media screen and (min-width: 40em) {
+
+    nav .menu {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+
+nav ul {
+    display: flex;
+    flex-direction: row;
 }
 
 nav li {
@@ -128,8 +140,66 @@ nav a:hover {
 }
 
 /* Navigation styling ends */
+/* Hamberger menu */
 
-main {
+@media screen and (max-width: 40em) {
+    .menu {
+        width: 90vw;
+        position: fixed;
+        inset: 0;
+        background-color: var(--light-two);
+        translate: 100vw 0;
+        translate: 0;
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+    }
+
+    .menu ul {
+        gap: 1rem;
+        margin: auto;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .close {
+        display: block;
+    }
+}
+
+/* different here: */
+.open[aria-expanded='true']+.menu {
+    translate: 0;
+    opacity: 1;
+}
+
+nav button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+@media screen and (width >=40em) {
+
+    nav button,
+    .close {
+        display: none;
+    }
+}
+
+.close {
+    margin-inline-start: auto;
+    margin-block-end: 8rem;
+    margin-top: 0.8em;
+    margin-right: 0.3em;
+    /* add to media? */
+    align-self: flex-start;
+}
+
+nav .close img {
+    width: 2.5rem;
+}
+
+*/ main {
     grid-area: main;
     background-color: var(--light-one);
 }
