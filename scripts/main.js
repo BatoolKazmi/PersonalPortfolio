@@ -7,21 +7,6 @@ const topNavMenu = document.getElementsByClassName('menu')[0];
 const main = document.getElementsByTagName('main')[0];
 const body = document.getElementsByTagName('body')[0];
 
-function setupTopNav(e) {
-    if (e.matches) {
-        // mobile
-        console.log('is mobile');
-        topNavMenu.setAttribute('inert', '');
-        topNavMenu.style.transition = 'none';
-    }
-    else {
-        // not mobile (tablet/desktop)
-        console.log('is desktop');
-        topNavMenu.removeAttribute('inert');
-        closeMobileMenu();
-    }
-}
-
 function openMobileMenu() {
     btnOpen.setAttribute('aria-expanded', 'true');
     topNavMenu.removeAttribute('inert');
@@ -43,6 +28,21 @@ function closeMobileMenu() {
     }, 500)
 }
 
+function setupTopNav(e) {
+    if (e.matches) {
+        // mobile
+        console.log('is mobile');
+        topNavMenu.setAttribute('inert', '');
+        topNavMenu.style.transition = 'none';
+    }
+    else {
+        // not mobile (tablet/desktop)
+        console.log('is desktop');
+        closeMobileMenu();
+        topNavMenu.removeAttribute('inert');
+    }
+}
+
 setupTopNav(media);
 
 btnOpen.addEventListener('click', openMobileMenu);
@@ -51,3 +51,4 @@ btnClose.addEventListener('click', closeMobileMenu);
 media.addEventListener('change', function (e) {
     setupTopNav(e);
 });
+
