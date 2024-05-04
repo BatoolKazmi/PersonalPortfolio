@@ -139,7 +139,6 @@ nav a:hover {
     font-size: 2em;
 }
 
-/* Navigation styling ends */
 /* Hamberger menu */
 
 @media screen and (max-width: 40em) {
@@ -172,6 +171,10 @@ nav a:hover {
     opacity: 1;
 }
 
+.open img {
+    margin-right: 2em;
+}
+
 nav button {
     background: none;
     border: none;
@@ -188,9 +191,9 @@ nav button {
 
 .close {
     margin-inline-start: auto;
-    margin-block-end: 8rem;
-    margin-top: 0.8em;
-    margin-right: 0.3em;
+    margin-block-end: 9rem;
+    margin-top: 0.9em;
+    margin-right: 1.1em;
     /* add to media? */
     align-self: flex-start;
 }
@@ -216,13 +219,11 @@ img {
 #first,
 #second,
 #third {
-
     display: grid;
     align-items: center;
     justify-content: center;
     align-content: center;
     justify-items: center;
-
 }
 
 
