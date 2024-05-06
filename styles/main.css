@@ -172,12 +172,21 @@ nav button {
     padding: 0;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 39em) {
 
     nav button,
-    .close {
+    .close,
+    .open {
         display: none;
     }
+
+    nav .menu {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (min-width: 40em) {
 
     nav .menu {
         display: flex;
