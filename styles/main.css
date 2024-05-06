@@ -181,7 +181,7 @@ nav button {
     padding: 0;
 }
 
-@media screen and (width >=40em) {
+@media screen and (width > 40.000000000001em) {
 
     nav button,
     .close {
