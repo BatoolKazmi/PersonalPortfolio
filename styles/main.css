@@ -132,7 +132,7 @@ nav a:hover {
 
 /* Hamberger menu */
 
-@media screen and (width < 40em) {
+@media screen and (max-width: 40em) {
     .menu {
         width: 90vw;
         position: fixed;
